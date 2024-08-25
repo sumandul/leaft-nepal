@@ -6,7 +6,7 @@ const ProjectCard = ({ data }) => {
   const sanitizedDescription = DOMPurify.sanitize(data?.description);
 
   return (
-    <div className='bg-[#B30732] p-10'>
+    <div className=' bg-blue-500 p-10'>
       <div >
         <h2 className='font-semibold text-3xl text-white capitalize'>{data?.title}</h2>
         {/* Render the sanitized HTML content dynamically */}

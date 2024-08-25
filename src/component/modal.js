@@ -23,14 +23,14 @@ const Modal = ({
            bg-blue-500 shadow-lg text-gray-200 px-6    sm:w-[600px] rounded-xl py-8  flex flex-col  animate-modalanimation  `}
             {...props}
           >
-            <div>
-              <HiOutlineX onClick={handleClose} className="  text-white" />
+            <div className=" flex justify-end">
+              <HiOutlineX onClick={handleClose} className="    text-yellow-200  text-3xl" />
 
             </div>
 
             <header className="flex items-center justify-between ">
               {typeof title === "string" ? (
-                <div className="text-2xl font-semibold">{title}</div>
+                <div className="text-2xl  text-center mb-4 font-semibold">{title}</div>
               ) : (
                 title
               )}

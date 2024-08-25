@@ -4,19 +4,19 @@ import 'leaflet/dist/leaflet.css';
 import { provincestate } from '../province';
 import District from "../district.json"
 import Mun from "../municipaltiy.json"
-// Define colors for each province
+
 const provinceColors = [
-  'red',        // Color for Province 1
-  'green',      // Color for Province 2
-  'blue',       // Color for Province 3
-  'lightblue',  // Color for Province 4
-  'lightgreen', // Color for Province 5
-  'yellow',     // Color for Province 6
-  'orange'      // Color for Province 7
+  'red',        
+  'green',      
+  'blue',       
+  'lightblue', 
+  'lightgreen',
+  'yellow',     
+  'orange'      
 ];
 
 const getProvinceColor = (province) => {
-  return provinceColors[province - 1] || 'skyblue'; // Default color if province number not found
+  return provinceColors[province - 1] || 'skyblue'; 
 };
 
 const style = (feature) => {
@@ -35,11 +35,11 @@ const Map = ({ setOpen }) => {
   const [provinceData, setProvinceData] = useState(null);
 
   useEffect(() => {
-    // Set the GeoJSON data (assuming only one province data is included)
+    
     setProvinceData(provincestate);
   }, []);
   const handleOpen = () => {
-     setOpen(true)
+    setOpen(true)
 
   }
 
@@ -52,7 +52,7 @@ const Map = ({ setOpen }) => {
           <button className={`${tab === "district" && 'bg-yellow-300'} rounded-md py-2 px-3 font-medium  capitalize text-lg`} onClick={() => setTab("district")}>district</button>
           <button className={`${tab === "mun" && 'bg-yellow-300'} rounded-md py-2 px-3 font-medium  capitalize text-lg`} onClick={() => setTab("mun")}>municipaltiy</button>
         </div>
-        <button className={`${tab === "mun" && 'bg-yellow-300'} rounded-md py-2 px-3 font-medium  capitalize text-lg`} onClick={handleOpen}>Contact us</button>
+        <button className={` rounded-md py-2 px-3 font-medium text-white  capitalize text-lg`} onClick={handleOpen}>Contact us</button>
       </div>
 
       {provinceData ? (
@@ -73,7 +73,7 @@ const Map = ({ setOpen }) => {
           {
             tab === "district" && <GeoJSON
               data={District}
-            // style={style}
+        
 
             />
           }
